@@ -43,26 +43,26 @@ founded 1992
 in the web since ~ 1998
 
 
-<!-- .slide: data-background-image="./resources/imgs/1-sfd-1998.png" class="t-r white" -->
-Perl 1997<!-- .element: class="big" -->
+<!-- .slide: data-background-image="./resources/imgs/1-sfd-1998.png" class="full white" -->
+Perl 1997<!-- .element: class="big top right" -->
 Note:
 https://web.archive.org/web/19981201054353/http://sfd.at/
 
 
-<!-- .slide: data-background-image="./resources/imgs/1-sfd-2004.png" class="t-r" -->
-Zope 2002<!-- .element: class="big" -->
+<!-- .slide: data-background-image="./resources/imgs/1-sfd-2004.png" class="full" -->
+Zope 2002<!-- .element: class="big top right" -->
 Note:
 https://web.archive.org/web/20050106061058/http://www2.sfd.at:8080/
 
 
-<!-- .slide: data-background-image="./resources/imgs/1-sfd-2010.png" class="t-r" -->
-Plone 4 2010<!-- .element: class="big" -->
+<!-- .slide: data-background-image="./resources/imgs/1-sfd-2010.png" class="full" -->
+Plone 4 2010<!-- .element: class="big top right" -->
 Note:
 https://alt.sfd.at/
 
 
-<!-- .slide: data-background-image="./resources/imgs/1-sfd-2025.png" class="t-r" -->
-Plone 6.1 2025<!-- .element: class="big" -->
+<!-- .slide: data-background-image="./resources/imgs/1-sfd-2025.png" class="full" -->
+Plone 6.1 2025<!-- .element: class="big top right" -->
 Note:
 https://sfd.at/
 
@@ -175,7 +175,7 @@ Recall the example from before:
 </a>
 
 
-<!-- .slide: data-background="Cyan" -->
+<!-- .slide: data-background="Cyan" class="full" -->
 The pat-inject trigger:
 
 ```js
@@ -188,7 +188,10 @@ const inject = {
 };
 ```
 
-<small>https://github.com/Patternslib/Patterns/blob/master/src/pat/inject/inject.js#L48</small>
+<p>
+  See:<br>
+  https://github.com/Patternslib/Patterns/blob/master/src/pat/inject/inject.js#L48
+</p><!-- .element: class="bottom left footnote" -->
 
 
 <!-- .slide: data-background="Cyan" -->
@@ -206,7 +209,9 @@ registry.patterns.inject.trigger =
 ```
 
 <br>
-<span><strong>All anchors</strong> within `.pat-inject` from the <strong>same domain</strong>.</span><!-- .element: class="fragment" -->
+<p>
+  <strong>All anchors</strong> within `.pat-inject` from the <strong>same domain</strong>.
+</p><!-- .element: class="fragment" -->
 
 
 <!-- .slide: data-background="Cyan" -->
@@ -295,7 +300,7 @@ Or maybe so - depends on your needs and more testing:
 ```
 
 
-<!-- .slide: data-background="Cyan" -->
+<!-- .slide: data-background="Cyan" class="full" -->
 One more thing ...
 
 ```xml [1-5|2-4]
@@ -306,9 +311,11 @@ One more thing ...
 </registry>
 ```
 
-See:
-https://github.com/plone/Products.CMFPlone/pull/4169
-https://github.com/plone/plone.app.layout/pull/405
+<p>
+  See:<br>
+  https://github.com/plone/Products.CMFPlone/pull/4169<br>
+  https://github.com/plone/plone.app.layout/pull/405
+</p><!-- .element: class="fragment bottom left footnote" -->
 
 
 <!-- .slide: data-background="Cyan" -->
