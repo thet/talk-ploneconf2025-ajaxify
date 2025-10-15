@@ -8,6 +8,11 @@
 <!-- .slide: data-background="Blue" -->
 # Ajaxify Plone
 
+<br>
+<a href="https://thet.github.io/talk-ploneconf2025-ajaxify">
+  https://thet.github.io/talk-ploneconf2025-ajaxify
+</a>
+
 <footer>
     Johannes Raggam<br>
     <a href="https://www.syslab.com/">syslab.com GmbH</a><br>
@@ -376,6 +381,16 @@ One more thing ...
 - https://github.com/collective/collective.ajaxify
 
 ... and report back for any issues.
+
+
+
+
+<!-- .slide: data-background="lime" -->
+## This talk is available at
+
+- https://thet.github.io/talk-ploneconf2025-ajaxify
+
+- https://github.com/thet/talk-ploneconf2025-ajaxify
 
 
 
