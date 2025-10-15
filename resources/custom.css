@@ -191,6 +191,18 @@ iframe {
     }
   }
 
+  .bg-white {
+    background-color: white;
+  }
+
+  .bg-black {
+    background-color: black;
+  }
+
+  .bg-lime {
+    background-color: lime;
+  }
+
   .big {
     font-size: 4rem;
     font-weight: bold;
@@ -199,6 +211,14 @@ iframe {
   .footnote {
     font-size: 0.6em;
   }
+
+  .mt-4.mt-4 {
+    margin-top: 1em;
+  }
+  .mt-8.mt-8 {
+    margin-top: 2em;
+  }
+
 
   .left {
     position: absolute;

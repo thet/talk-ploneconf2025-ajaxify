@@ -5,11 +5,40 @@
 <!-- .slide: data-background="DarkViolet" -->
 <!-- .slide: data-background="Cyan" -->
 
+<!-- .slide: data-background="Blue" -->
+# Ajaxify Plone
+
+<footer>
+    Johannes Raggam<br>
+    <a href="https://www.syslab.com/">syslab.com GmbH</a><br>
+    @ Plone Conference 2025
+</footer><!-- .element: class="footnote mt-8" -->
+
+
+
 
 <!-- .slide: data-background="lime" -->
 ## Look at this!
 
+
+<!-- .slide: data-background="lime" -->
 - https://sfd.at
+
+
+<!-- .slide: data-background-image="./resources/imgs/0-look-1-full-reload.png" class="full" -->
+First full page reload<!-- .element: class="big mt-8 top right bg-lime" -->
+
+
+<!-- .slide: data-background-image="./resources/imgs/0-look-2-subsequent-navigation.png" class="full" -->
+Subsequent navigation<!-- .element: class="big mt-8 top right bg-lime" -->
+
+
+<!-- .slide: data-background-image="./resources/imgs/0-look-3-ajaxified.png" class="full" -->
+Ajaxified<!-- .element: class="big mt-8 top right bg-lime" -->
+
+
+<!-- .slide: data-background-image="./resources/imgs/0-look-4-local-ajaxified.png" class="full" -->
+Ajaxified, locally<!-- .element: class="big mt-8 top right bg-lime" -->
 
 
 
@@ -318,8 +347,36 @@ One more thing ...
 </p><!-- .element: class="fragment bottom left footnote" -->
 
 
-<!-- .slide: data-background="Cyan" -->
-... before we dive even a bit deeper.
+
+
+<!-- .slide: data-background="Purple" -->
+## If you want to dig deeper:
+
+- Polyfill for `navigate` event:<br>
+  https://github.com/Patternslib/Patterns/tree/master/src/core/polyfills.js
+
+- Using `navigate` to reload toolbar, data-base-url, navigationmarker:<br>
+  https://github.com/plone/mockup/pull/1509
+
+
+
+
+<!-- .slide: data-background="DarkViolet" -->
+## Not yet...
+
+- Form submission support (but we use that in Quaive)
+
+- Portlet reloading (but portlets know their reload url, so `navigate` comes in handy also here.)
+
+
+
+
+<!-- .slide: data-background="lime" -->
+## Try it out!
+- https://github.com/collective/collective.ajaxify
+
+... and report back for any issues.
+
 
 
 
@@ -328,5 +385,5 @@ One more thing ...
 
 
 
-<!-- .slide: data-background="DarkViolet" -->
-## Questions
+<!-- .slide: data-background="Black" -->
+Questions?
