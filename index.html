@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>reveal.js</title>
+
+    <link href="reveal.js/dist/reset.css"
+          rel="stylesheet"
+    />
+    <link href="reveal.js/dist/reveal.css"
+          rel="stylesheet"
+    />
+    <link href="reveal.js/dist/theme/black.css"
+          rel="stylesheet"
+    />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link href="reveal.js/plugin/highlight/monokai.css"
+          rel="stylesheet"
+    />
+
+    <link href="./resources/fonts/font-ubuntu.css" rel="stylesheet">
+    <link href="./resources/custom.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section class="cover frontpage"
+                 data-background="blue"
+        >
+          <h1>Ajaxify Plone</h1>
+          <footer>
+            Johannes Raggam<br />@ Plone Conference 2025
+          </footer>
+        </section>
+
+        <section data-charset="utf-8"
+                 data-markdown="./talk.md"
+                 data-separator="^\n\n\n\n"
+                 data-separator-notes="^Note:"
+                 data-separator-vertical="^\n\n"
+        >
+        </section>
+
+      </div>
+    </div>
+
+    <script src="reveal.js/dist/reveal.js"></script>
+    <script src="reveal.js/plugin/notes/notes.js"></script>
+    <script src="reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="reveal.js/plugin/highlight/highlight.js"></script>
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+        Reveal.initialize({
+            hash: true,
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            width: "100%",
+            height: "100%",
+
+            transition: "linear",
+            backgroundTransition: "slide",
+
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@patternslib/patternslib@9.10.4-alpha.0/dist/bundle.min.js"></script>
+  </body>
+
+</html>
