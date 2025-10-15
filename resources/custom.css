@@ -71,9 +71,9 @@ body {
   box-shadow: none;
   max-height: 90%;
   padding: 1em 0.5em;
-  font-size: 1rem;
+  font-size: 1.8rem;
   font-family: Ubuntu Mono !important;
-  line-height: 1.2rem;
+  line-height: 2rem;
   padding: 1rem;
 }
 .reveal .full,
@@ -235,4 +235,18 @@ iframe {
   .footnote-t-r a {
     text-decoration: none;
   }
+}
+
+
+.reveal pre code {
+  counter-reset: none;
+}
+
+.reveal .hljs-ln-numbers {
+  display: none !important;
+}
+
+.about-me {
+  overflow: scroll;
+  font-size: 1.2rem;
 }

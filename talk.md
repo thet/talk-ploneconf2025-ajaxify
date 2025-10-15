@@ -119,11 +119,12 @@ Include the library:
 
 <!-- .slide: data-background="lime" -->
 Declare the injection:
-```html
-<a href="https://2025.ploneconf.org/schedule/speakers/johannes-raggam"
+
+```html [1-12|1|2|3-5,10-12]
+<a href="https://corsproxy.io/?https://2025.ploneconf.org/schedule/speakers/johannes-raggam?"
    class="pat-inject"
    data-pat-inject="
-       source: .card-profile;
+       source: .profile .card-summary;
        target: .about-me;
    ">
   Load speaker info
@@ -138,10 +139,10 @@ Declare the injection:
 <!-- .slide: data-background="lime" -->
 Demo:
 
-<a href="https://2025.ploneconf.org/schedule/speakers/johannes-raggam"
+<a href="https://corsproxy.io/?https://2025.ploneconf.org/schedule/speakers/johannes-raggam?"
    class="pat-inject"
    data-pat-inject="
-       source: .card-profile;
+       source: .profile .card-summary;
        target: .about-me;
    ">
   Load speaker info
