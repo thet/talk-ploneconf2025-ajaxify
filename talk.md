@@ -3,6 +3,8 @@
 <!-- .slide: data-background="Yellow" -->
 <!-- .slide: data-background="Purple" -->
 <!-- .slide: data-background="DarkViolet" -->
+<!-- .slide: data-background="Cyan" -->
+
 
 <!-- .slide: data-background="lime" -->
 ## Look at this!
@@ -155,9 +157,159 @@ Demo:
 
 
 
+<!-- .slide: data-background="Cyan" -->
+## pat-inject hacks
 
 
+<!-- .slide: data-background="Cyan" -->
+Recall the example from before:
 
+```html [1-12|2]
+<a href="https://corsproxy.io/?https://2025.ploneconf.org/schedule/speakers/johannes-raggam?"
+   class="pat-inject"
+   data-pat-inject="
+       source: .profile .card-summary;
+       target: .about-me;
+   ">
+  Load speaker info
+</a>
+
+
+<!-- .slide: data-background="Cyan" -->
+The pat-inject trigger:
+
+```js
+const inject = {
+    name: "inject",
+    trigger: "a.pat-inject, form.pat-inject, .pat-subform.pat-inject",
+    parser: parser,
+
+    [...]
+};
+```
+
+<small>https://github.com/Patternslib/Patterns/blob/master/src/pat/inject/inject.js#L48</small>
+
+
+<!-- .slide: data-background="Cyan" -->
+What if we change the trigger to catch all links?
+
+
+<!-- .slide: data-background="Cyan" -->
+Like so:
+
+```js [1-4|3]
+// Add a new trigger for the inject pattern.
+registry.patterns.inject.trigger =
+    `.pat-inject a[href^="${window.location.origin}"]`
+;
+```
+
+
+<!-- .slide: data-background="Cyan" -->
+Or actually so:
+
+```js [1-23|5-6|3-4|7-16|17-18|19-20|21-22|23-25]
+// Add a new trigger for the inject pattern.
+registry.patterns.inject.trigger =
+    // All anchors with the pat-inject class.
+    `a.pat-inject`
+    // All anchors within an element with the pat-inject class.
+    + `.pat-inject a[href^="${window.location.origin}"]`
+    // Except files.
+    + `:not([href*="@@download"])`
+    + `:not([href$=zip])`
+    + `:not([href$=pdf])`
+    + `:not([href$=mp3])`
+    + `:not([href$=wav])`
+    + `:not([href$=jpg])`
+    + `:not([href$=webp])`
+    + `:not([href$=png])`
+    + `:not([href$=txt])`
+    // Don't inject dropdown "buttons"
+    + `:not(.dropdown-toggle)`
+    // Don't inject on the autotoc tab headings.
+    + `:not([id^="autotoc"])`
+    // Don't handle explicitly set pat-inject elements.
+    + `:not(.pat-inject)`
+    // Stop global injection when explicitly asked. You can still explicitly
+    // set pat-inject on these elements.
+    + `:not(.stop-pattern)`
+;
+```
+
+
+<!-- .slide: data-background="Cyan" -->
+Markup changes:
+
+```html [1-17|2-6|3|7-14|8-11|12-13]
+  <body tal:define="body_class python:plone_layout.bodyClass(template, view);"
+        class="
+            pat-inject
+
+            ${body_class}
+        "
+        data-pat-inject="
+            source: #portal-column-content::element;
+            target: #portal-column-content::element;
+            history: record;
+            scroll: top &&
+            source: head title;
+            target: head title;
+        "
+>
+    ...
+</body>
+```
+
+
+<!-- .slide: data-background="Cyan" -->
+Or maybe so - depends on your needs and more testing:
+
+```html
+  <body tal:define="body_class python:plone_layout.bodyClass(template, view);"
+        class="
+            pat-inject
+
+            ${body_class}
+        "
+        data-pat-inject="
+            source: #portal-column-content::element;
+            target: #portal-column-content::element;
+            history: record;
+            scroll: top &&
+            source: head title;
+            target: head title &&
+            source: #language_navigation::element;
+            target: #language_navigation::element &&
+            source: head link[rel=canonical]::element;
+            target: head link[rel=canonical]::element;
+            remove-tags: ;
+        "
+>
+    ...
+</body>
+```
+
+
+<!-- .slide: data-background="Cyan" -->
+One more thing ...
+
+```xml [1-5|2-4]
+<registry>
+  <record name="plone.use_ajax_main_template">
+    <value>True</value>
+  </record>
+</registry>
+```
+
+See:
+https://github.com/plone/Products.CMFPlone/pull/4169
+https://github.com/plone/plone.app.layout/pull/405
+
+
+<!-- .slide: data-background="Cyan" -->
+... before we dive even a bit deeper.
 
 
 
