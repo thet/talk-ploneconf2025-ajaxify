@@ -205,6 +205,9 @@ registry.patterns.inject.trigger =
 ;
 ```
 
+<br>
+<span><strong>All anchors</strong> within `.pat-inject` from the <strong>same domain</strong>.</span><!-- .element: class="fragment" -->
+
 
 <!-- .slide: data-background="Cyan" -->
 Or actually so:
@@ -214,7 +217,7 @@ Or actually so:
 registry.patterns.inject.trigger =
     // All anchors with the pat-inject class.
     `a.pat-inject`
-    // All anchors within an element with the pat-inject class.
+    // All anchors within `.pat-inject` from the same domain.
     + `.pat-inject a[href^="${window.location.origin}"]`
     // Except files.
     + `:not([href*="@@download"])`
